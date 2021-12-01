@@ -1,0 +1,1710 @@
+/**
+* Template Name: Valera - v4.6.0
+* Template URL: https://bootstrapmade.com/valera-free-bootstrap-theme/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #D86018;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffa790;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #D86018;
+  border-top-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #D86018;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+.back-to-top:hover {
+  background: #ff9f86;
+  color: #fff;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: rgba(21, 5, 23, 0.25);
+  transition: all 0.5s;
+  z-index: 997;
+  position: relative;
+  height: 70px;
+}
+@media (max-width: 992px) {
+  #header {
+    height: 60px;
+  }
+}
+#header.fixed-top, #header.header-inner-pages {
+  background: rgba(21, 5, 23, 0.8);
+}
+#header.fixed-top {
+  position: fixed;
+}
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+#header .logo a {
+  color: #fff;
+}
+#header .logo img {
+  max-height: 40px;
+}
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+@media (max-width: 991px) {
+  .scrolled-offset {
+    margin-top: 60px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header Social Links
+--------------------------------------------------------------*/
+.header-social-links {
+  padding-left: 20px;
+}
+.header-social-links a {
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.header-social-links a i {
+  line-height: 0;
+}
+.header-social-links a:hover {
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .header-social-links {
+    padding: 0 15px 0 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar li {
+  position: relative;
+}
+.navbar > ul > li {
+  white-space: nowrap;
+  padding: 10px 12px;
+}
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.3s;
+  color: white;
+  position: relative;
+}
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar > ul > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -7px;
+  left: 0;
+  background-color: #D86018;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+.navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
+  visibility: visible;
+  width: 100%;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #fff;
+}
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+  color: #150517;
+}
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #D86018;
+}
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+.navbar-mobile a, .navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #150517;
+}
+.navbar-mobile > ul > li {
+  padding: 0;
+}
+.navbar-mobile a:hover:before, .navbar-mobile li:hover > a:before, .navbar-mobile .active:before {
+  visibility: hidden;
+}
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #D86018;
+}
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+  color: #D86018;
+}
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-bg.jpg") top center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: -70px;
+}
+@media (max-width: 992px) {
+  #hero {
+    margin-bottom: -60px;
+  }
+}
+#hero:before {
+  content: "";
+  background: rgba(21, 5, 23, 0.5) linear-gradient(rgba(26, 0, 33, 0.5) 0%, rgba(26, 0, 33, 0.5) 5%, rgba(38, 6, 51, 0.5) 40%, rgba(4, 58, 27, 0.993) 76%, rgba(0, 122, 51, 0.7) 94%, rgba(94, 245, 126, 0.5) 100%) repeat scroll 0% 0%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#hero h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #fff;
+}
+#hero h2 {
+  color: #eee;
+  margin: 15px 0 0 0;
+  font-size: 24px;
+}
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 30px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+#hero .btn-get-started:hover {
+  background: #D86018;
+  border: 2px solid #D86018;
+}
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f3f8fa;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #007A33;
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #D86018;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+.section-title p {
+  margin-bottom: 0;
+  color: #919191;
+  font-size: 24px;
+}
+
+/*--------------------------------------------------------------
+# About/Intro
+--------------------------------------------------------------*/
+.about .content h3 {  
+  font-weight: 600;
+  font-size: 36px;
+}
+.about .content p{
+  font-family: "yuji mai", sans-serif;
+  font-size: 20;
+}
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*-----------------------------------------------------------
+Parallax introduction
+-------------------------------------------------------------*/
+.parintro {
+  /* The image used */
+  background-image: url('../img/intro.jpg');
+  padding: 100px;
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parintro h1{
+  color: #007A33;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;
+}
+.parintro .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px;   
+}
+/*--------------------------------------------------------------
+# AEZ
+--------------------------------------------------------------*/
+.features .row + .row {
+  margin-top: 100px;
+}
+.features h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/*.features p {
+  font-family: "yuji mai", sans-serif;
+}*/
+
+.features p:last-child {
+  margin-bottom: 0;
+}
+.groove{
+  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+  background: #fff;
+}
+
+/*--------------------------------------------------------------
+# Elevation and relief, Saline  and soil Section 
+--------------------------------------------------------------*/
+.elev-relief {
+  padding-bottom: 10px;
+}
+.elev-relief .card {
+  border: 0;
+  padding: 0 30px;
+  margin-bottom: 60px;
+  position: relative;
+}
+.elev-relief .card-img {
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  overflow: hidden;
+  z-index: 9;
+  border-radius: 0;
+}
+.elev-relief .card-img img {
+  max-width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.elev-relief .card-body {
+  z-index: 10;
+  background: #fff;
+  border-top: 4px solid #fff;
+  padding: 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  margin-top: -60px;
+  transition: 0.3s;
+}
+.elev-relief .card-title {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007A33;
+}
+.elev-relief .card-text {
+  color: #5e5e5e;
+}
+.service-details .card:hover img {
+  transform: scale(1.1);
+}
+.elev-relief .card:hover .card-body {
+  border-color: #47f07a;
+}
+
+
+
+/*--------------------------------------------------------------
+# Saline and soil
+--------------------------------------------------------------*/
+.sal{
+  padding: 12vmin 0;
+}
+.sal .row .col-md-6 .salt img{
+  opacity: 0.8;
+  width: 100%;
+  border-radius: 0.2em;
+}
+.sal .row .col-md-6:last-child{
+  position: relative;  
+}
+.sal .row .col-md-6 .panel{
+  position: relative;
+  top: 7vmin;
+  left: -18vmin;
+  background: #cf933a;
+  border-radius: 3px;
+  text-align: left;
+  padding: 5vmin 10vmin 5vmin 10vmin;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+  font-family: yuji mai;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .sal .row .col-md-6 .panel{
+    position: initial;
+    width: initial;
+    height: initial;
+  }
+}
+
+/*--------------------------------------------------------------
+# Parallax
+--------------------------------------------------------------*/
+
+.parallax {
+  /* The image used */
+  background-image: url('../img/parallax.jpg');
+  padding: 100px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.parallax h1{
+  color: #007A33;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;
+}
+.parallax .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px;  
+  opacity: 0.9;  
+  position: relative; 
+}
+
+/*--------------------------------------------------------------
+# Population and towns
+--------------------------------------------------------------*/
+.population-details {
+  padding-top: 40px;
+}
+.population-details .population-details-image img {
+  width: 100%;
+}
+.population-details .population-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
+}
+.population-details .population-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  color: #007A33;
+}
+.population-details .population-info img {
+  width: 100%;
+}
+
+.population-details .population-description {
+  padding-top: 30px;
+}
+.population-details .population-description h2 {
+  font-size: 26px;
+  font-family: caesar dressing;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #007A33;
+}
+.population-details .population-description p {
+  padding: 0;
+  font-size: 15px;
+  font-family: Raleway;
+}
+
+/*--------------------------------------------------------------
+#women and young people
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# woyouth
+--------------------------------------------------------------*/
+.woyouth {
+  overflow: hidden;
+}
+.woyouth .nav-tabs {
+  border: 0;
+}
+.woyouth .nav-link {
+  border: 0;
+  padding: 12px 15px 12px 0;
+  transition: 0.3s;
+  color: #433f39;
+  border-radius: 0;
+  border-right: 2px solid #e8e7e4;
+  font-weight: 600;
+  font-size: 15px;
+}
+.woyouth .nav-link:hover {
+  color: #ffb03b;
+}
+.woyouth .nav-link.active {
+  color: #ffb03b;
+  border-color: #ffb03b;
+}
+.woyouth .tab-pane.active {
+  -webkit-animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
+}
+.woyouth .details h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #433f39;
+}
+.woyouth .details p {
+  color: #777777;
+}
+.woyouth .details p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 992px) {
+  .woyouth .nav-link {
+    border: 0;
+    padding: 15px;
+  }
+  .woyouth .nav-link.active {
+    color: #fff;
+    background: #ffb03b;
+  }
+}
+
+/*--------------------------------------------------------------
+# Youth
+--------------------------------------------------------------*/
+
+.youth {
+  /* The image used */
+  background-image: url('../img/youth.jpg');
+  padding: 100px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.youth h1{
+  color: #343a40;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;
+}
+.youth .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px; 
+  opacity: 0.8;
+  position: relative; 
+  width: 100%;  
+}
+.youth h3{
+  text-align: center;
+  
+}
+
+/*--------------------------------------------------------------
+# Economy of senegal
+--------------------------------------------------------------*/
+.economy-details {
+  padding-top: 20px;
+}
+.economy-details .economy-details-image{
+  width: 100%;
+}
+.economy-details .economy-info {
+  padding: 10px;
+  box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
+}
+.economy-details .economy-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  color: #007A33;
+}
+.economy-details .economy-info img {
+  width: 100%;
+}
+
+.economy-details .economy-description {
+  padding-top: 30px;
+}
+.economy-details .economy-description h2 {
+  font-size: 26px;
+  font-family: caesar dressing;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #007A33;
+}
+.economy-details .economy-description p {
+  padding: 0;
+  font-size: 16px;
+  font-family: yuji mai;
+}
+
+/*------------------------------------------------------------*/
+.econ2 .container h2{
+  font-family: Open Sans;
+  font-weight: 700;
+}
+
+/*-----------------------------------------------------------
+Parallax agriculture
+-------------------------------------------------------------*/
+.paragro {
+  /* The image used */
+  background-image: url('../img/agric.jpg');
+  padding: 100px;
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paragro h1{
+  color: #007A33;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;  
+}
+.paragro .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px;   
+}
+
+/*--------------------------------------------------------------
+# Agriculture
+--------------------------------------------------------------*/
+.agriculture .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+.agriculture .icon-box::before {
+  content: "";
+  position: absolute;
+  background: #cbe0fb;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.agriculture .icon-box:hover::before {
+  background: #007A33;
+  top: 0;
+  border-radius: 0px;
+}
+.agriculture .icon {
+  margin-bottom: 15px;
+}
+.agriculture .icon i {
+  font-size: 48px;
+  line-height: 1;
+  color: #007A33;
+  transition: all 0.3s ease-in-out;
+}
+.agriculture .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.agriculture .title a {
+  color: #007A33;
+}
+.agriculture .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+.agriculture .icon-box:hover .title a, .featured-services .icon-box:hover .description {
+  color: #fff;
+}
+.agriculture .icon-box:hover .icon i {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Agri description 
+--------------------------------------------------------------*/
+.agri .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+.agri .content ul {
+  list-style: none;
+  padding: 0;
+}
+.agri .content ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 35px;
+}
+.agri .content ul li:first-child {
+  margin-top: 35px;
+}
+.agri .content ul i {
+  background: #fff;
+  box-shadow: 0px 6px 15px rgba(16, 110, 234, 0.12);
+  font-size: 24px;
+  padding: 20px;
+  margin-right: 15px;
+  color: #007A33;
+  border-radius: 50px;
+}
+.agri .content ul h5 {
+  font-size: 18px;
+  color: #007A33;
+  font-weight: 600;
+}
+.agri .content ul p {
+  font-size: 15px;
+}
+.agri .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+#Land degradation
+--------------------------------------------------------------*/
+.ld{
+  background-image: url('../img/ld.jpg');
+  padding: 100px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.ld .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px; 
+  opacity: 0.8;
+  position: relative; 
+  width: 100%; 
+}
+
+.ld .agrochallenges p{
+  font-size: 20px;
+  color: #000000;
+  font-family: yuji mai;
+  font-weight: 500; 
+  align-items: right; 
+}
+.ld .agrochallenges ul li {
+  font-size: 20px;
+  color: #000000;
+  font-family: yuji mai;
+  font-weight: 500;
+  align-items: center;
+}
+
+/*--------------------------------------------------------------
+# Irrigation
+--------------------------------------------------------------*/
+.irrigation{
+  padding: 15vmin 5vmin;
+}
+.irrigation .row .col-md-6 .salt img{
+  opacity: 0.8;
+  width: 100%;
+  border-radius: 0.2em;
+}
+.irrigation .row .col-md-6:last-child{
+  position: relative;  
+}
+.irrigation .row .col-md-6 .panel{
+  position: relative;
+  top: 7vmin;
+  left: -18vmin;
+  background: whitesmoke;
+  border-radius: 3px;
+  text-align: left;
+  padding: 5vmin 5vmin 5vmin 10vmin;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+  font-family: yuji mai;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .irrigation .row .col-md-6 .panel{
+    position: initial;
+    width: initial;
+    height: initial;
+  }
+}
+
+/*--------------------------------------------------------------
+# Agribusiness
+--------------------------------------------------------------*/
+.agribusiness{
+  padding: 15vmin 5vmin;
+}
+.agribusiness .row .col-md-6 .salt img{
+  opacity: 0.8;
+  width: 100%;
+  border-radius: 0.2em;
+}
+.agribusiness .row .col-md-6:last-child{
+  position: relative;  
+}
+.agribusiness .row .col-md-6 .panel{
+  position: relative;
+  top: 7vmin;
+  left: -18vmin;
+  background: whitesmoke;
+  border-radius: 3px;
+  text-align: left;
+  padding: 5vmin 5vmin 5vmin 10vmin;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+  font-family: yuji mai;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .agribusiness .row .col-md-6 .panel{
+    position: initial;
+    width: initial;
+    height: initial;
+  }
+}
+
+/*-----------------------------------------------------------
+Parallax avenir
+-------------------------------------------------------------*/
+.pavenir {
+  /* The image used */
+  background-image: url('../img/avenir.jpg');
+  padding: 100px;
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pavenir h1{
+  color: #007A33;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;
+}
+.pavenir .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px;   
+}
+
+/*--------------------------------------------------------------
+# Avenir_info
+--------------------------------------------------------------*/
+.avenir_info .icon-boxes h4 {
+  font-size: 18px;
+  color: #7f6d68;
+  margin-bottom: 15px;
+}
+.avenir_info .icon-box {
+  margin-top: 40px;
+}
+.avenir_info .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #caffba;
+  border-radius: 50px;
+  transition: 0.5s;
+  background: #fff;
+}
+.avenir_info .icon-box .icon i {
+  color: #007A33;
+  font-size: 32px;
+}
+.avenir_info .icon-box:hover .icon {
+  background: #007A33;
+  border-color: #21ff21;
+}
+.avenir_info .icon-box:hover .icon i {
+  color: #fff;
+}
+.avenir_info .icon-box .title {
+  margin-left: 85px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.avenir_info .icon-box .title a {
+  color: #343a40;
+  transition: 0.3s;
+}
+.avenir_info .icon-box .title a:hover {
+  color: #007A33;
+}
+.avenir_info .icon-box .description {
+  margin-left: 85px;
+  line-height: 24px;
+  font-size: 14px;
+}
+.avenir_info .video-box {
+  background: url("../img/avenir_vt.webp") center center no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+.avenir_info .play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(#007A33 50%, rgba(15, 80, 3, 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  overflow: hidden;
+}
+.avenir_info .play-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.avenir_info .play-btn::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation: pulsate-btn 2s;
+  animation: pulsate-btn 2s;
+  -webkit-animation-direction: forwards;
+  animation-direction: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 88, 33, 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+.avenir_info .play-btn:hover::after {
+  border-left: 15px solid #ff5821;
+  transform: scale(20);
+}
+.avenir_info .play-btn:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  -webkit-animation: none;
+  animation: none;
+  border-radius: 0;
+}
+
+@-webkit-keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Approach
+--------------------------------------------------------------*/
+.approach h3{
+  font-weight: 700;
+  color: #007A33;
+}
+.approach p{
+  font-style: italic;
+}
+.approach p ul li{  
+    font-size: 20px;
+    color: #007A33;
+    font-weight: 500;
+    align-items: center;
+}
+
+
+/*--------------------------------------------------------------
+# components
+--------------------------------------------------------------*/
+.component .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  height: 100%;
+}
+.component .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #007A33;
+}
+.component .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #6c665c;
+}
+.component .box p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+.component .box:hover {
+  background: #007A33;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+.component .box:hover span, .component .box:hover h4, .component .box:hover p {
+  color: #fff;
+}
+
+
+/*--------------------------------------------------------------
+# areas
+--------------------------------------------------------------*/
+.areas .row + .row {
+  margin-top: 100px;
+}
+.areas h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.areas ul {
+  list-style: none;
+  padding: 0;
+}
+.areas ul li {
+  padding-bottom: 10px;
+}
+.areas ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #68A4C4;
+}
+.areas p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+#Avenir climate
+---------------------------------------------------------------*/
+#avclim {
+  background: #fff;
+  padding: 60px 0;
+}
+#avclim .avclim-container .background {
+  margin: 20px 0;
+}
+#avclim .avclim-container .content {
+  background: #fff;
+}
+#avclim .avclim-container .title {
+  color: #333;
+  font-weight: 700;
+  font-size: 32px;
+}
+#avclim .avclim-container p {
+  line-height: 26px;
+}
+#avclim .avclim-container p:last-child {
+  margin-bottom: 0;
+}
+#avclim .avclim-container .icon-box {
+  background: #fff;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+#avclim .avclim-container .icon-box .icon {
+  float: left;
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #007A33;
+  transition: all 0.3s ease-in-out;
+}
+#avclim .aavclimbout-container .icon-box .icon i {
+  color: #007A33;
+  font-size: 24px;
+  line-height: 0;
+}
+#avclim .avclim-container .icon-box:hover .icon {
+  background: #007A33;
+}
+#avclim .avclim-container .icon-box:hover .icon i {
+  color: #fff;
+}
+#avclim .avclim-container .icon-box .title {
+  margin-left: 80px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+#avclim .avclim-container .icon-box .title a {
+  color: #283d50;
+}
+#avclim .avclim-container .icon-box .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+#avclim .avclim-extra {
+  padding-top: 60px;
+}
+#avclim .avclim-extra h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/*--------------------------------------------------------------
+# landegradation in project
+--------------------------------------------------------------*/
+.deforest .row + .row {
+  margin-top: 100px;
+}
+.deforest h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.deforest ul {
+  list-style: none;
+  padding: 0;
+}
+.deforest ul li {
+  padding-bottom: 10px;
+}
+.deforest ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #68A4C4;
+}
+.deforest p:last-child {
+  margin-bottom: 0;
+}
+.deforest img{
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------------------------------------------------
+# challenge in the project
+--------------------------------------------------------------*/
+.challenge_p h2{
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #007A33;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.challenge_p h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #D86018;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+.challenge_p h3 {
+  margin-bottom: 0;
+  color: #919191;
+  font-size: 27px; 
+  text-align: center; 
+}
+.challenge_p h4 {
+  font-weight: 600;
+}
+
+/*-----------------------------------------------------
+Box
+------------------------------------------------------*/
+.box{
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+/*-----------------------------------------------------------
+Parallax avenir
+-------------------------------------------------------------*/
+.vulnerable {
+  /* The image used */
+  background-image: url('../img/vuln.jpg');
+  padding: 100px;
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.vulnerable h1{
+  color: #007A33;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;
+}
+.vulnerable .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;  
+  padding: 20px;   
+}
+
+
+/*--------------------------------------------------------------
+# Value-chains
+--------------------------------------------------------------*/
+.value_chain .row + .row {
+  margin-top: 10px;
+}
+.value_chain h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.value_chain img{
+  width: 80%;
+  height: 80%;
+}
+.value_chain p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*-----------------------------------------------------------
+Parallax action
+-------------------------------------------------------------*/
+.paction {
+  /* The image used */
+  background-image: url('../img/action.jpg');
+  padding: 100px;
+  height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paction h1{
+  color: #007A33;
+  text-align: center;
+  font-family: caesar dressing;
+  font-weight: 700;
+}
+.paction .container{
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 15px 50px 30px;    
+}
+
+/*-----------------------------------------------------------
+Vulnerability Report
+-------------------------------------------------------------*/
+.cvuln .bx{
+  height: 200px;
+  position: relative;
+  border: none;
+  text-align: center;
+  padding: 20px;
+}
+.cvuln .bx .center{
+  margin: 0;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);   
+}
+.button {
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;  
+}
+@media only screen and (max-width: 768px) {
+  .cvuln .bx .center{
+    position: initial;
+    width: initial;
+    height: initial;
+    top: 200%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Partners
+--------------------------------------------------------------*/
+.partner {
+  padding: 15px 0;
+  text-align: center;
+}
+.partner img {
+  max-width: 45%; 
+  display: inline-block;
+  padding: 15px 0;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: url("../img/agric.jpg") center center no-repeat;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(2, 0, 2, 0.6);
+  z-index: 1;
+}
+#footer .footer-top {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 0;
+}
+#footer .footer-top h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#footer .footer-top p {
+  font-size: 15;
+  font-style: italic;
+  margin: 30px 0 0 0;
+  padding: 0;
+}
+#footer .footer-top .social-links {
+  margin-top: 30px;
+}
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+#footer .footer-top .social-links a:hover {
+  background: #D86018;
+  color: #fff;
+  text-decoration: none;
+}
+#footer .footer-bottom {
+  border-top: 1px solid #3b0e41;
+  z-index: 2;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#footer .copyright {
+  float: left;
+}
+#footer .credits {
+  float: right;
+  font-size: 13px;
+}
+@media (max-width: 768px) {
+  #footer .copyright, #footer .credits {
+    float: none;
+    text-align: center;
+  }
+  #footer .credits {
+    padding-top: 5px;
+  }
+}
